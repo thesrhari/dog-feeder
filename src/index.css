@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- Light Mode Palette --- */
+    --background: 210 40% 98%; /* Very Light Blue/Gray */
+    --foreground: 215 25% 25%; /* Dark Slate Gray */
+
+    --muted: 210 40% 92%; /* Light Gray */
+    --muted-foreground: 215 15% 55%; /* Medium Slate Gray */
+
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 215 25% 25%;
+
+    --card: 0 0% 100%; /* White */
+    --card-foreground: 215 25% 25%;
+
+    --border: 210 30% 88%; /* Slightly darker gray border */
+    --input: 210 30% 94%; /* Slightly lighter input background */
+
+    /* Primary: Calming Blue */
+    --primary: 217 75% 52%; /* #4A89DC */
+    --primary-foreground: 210 40% 98%; /* White */
+
+    /* Secondary: Gentle Teal */
+    --secondary: 128 60% 50%; /* #4DB6AC */
+    --secondary-foreground: 170 100% 98%; /* White */
+
+    /* Accent: Light teal background */
+    --accent: 170 40% 94%;
+    --accent-foreground: 170 45% 30%; /* Darker teal text */
+
+    /* Destructive: Standard Red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Status Colors */
+    --success: 145 65% 42%; /* Forest Green */
+    --success-foreground: 145 100% 98%;
+    --warning: 35 85% 55%; /* Amber/Orange */
+    --warning-foreground: 35 100% 5%; /* Dark Brown/Black */
+
+    --ring: 217 75% 52%; /* Primary color for rings */
+    --radius: 0.5rem; /* Default shadcn radius */
+
+    /* Define the font variable */
+    --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue", sans-serif;
+  }
+
+  .dark {
+    /* --- Dark Mode Palette --- */
+    --background: 220 18% 11%; /* Very Dark Blue/Gray */
+    --foreground: 210 40% 96%; /* Light Gray */
+
+    --muted: 220 15% 20%; /* Darker Gray */
+    --muted-foreground: 210 15% 65%; /* Lighter Muted Text */
+
+    --popover: 220 20% 9%; /* Almost Black */
+    --popover-foreground: 210 40% 96%;
+
+    --card: 220 18% 14%; /* Slightly lighter than background */
+    --card-foreground: 210 40% 96%;
+
+    --border: 220 15% 25%; /* Muted border */
+    --input: 220 15% 25%; /* Muted input */
+
+    /* Primary: Keep similar blue, maybe slightly lighter */
+    --primary: 217 75% 60%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary: Keep teal */
+    --secondary: 170 45% 48%;
+    --secondary-foreground: 170 100% 98%;
+
+    /* Accent: Darker teal background */
+    --accent: 170 40% 25%;
+    --accent-foreground: 170 40% 90%;
+
+    /* Destructive: Lighter Red */
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Status Colors (Dark Mode) */
+    --success: 145 55% 50%; /* Brighter Green */
+    --success-foreground: 145 100% 98%;
+    --warning: 38 90% 60%; /* Brighter Amber */
+    --warning-foreground: 35 100% 5%;
+
+    --ring: 217 75% 60%;
+    /* --radius stays the same */
+    /* --font-sans stays the same */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased; /* Added antialiased for better font smoothing */
+    font-feature-settings: "rlig" 1, "calt" 1; /* Optional: improve font rendering */
+  }
+}
+
+/* Remove background pattern */
+body::before {
+  display: none;
+}
+.dark body::before {
+  display: none;
+}
